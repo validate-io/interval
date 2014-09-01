@@ -1,5 +1,5 @@
 Interval
-===
+========
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Validates if a value exists on a specified interval.
