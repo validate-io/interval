@@ -46,22 +46,4 @@ describe( 'validate.io-interval', function tests() {
 		}
 	});
 
-	it( 'should negatively validate if the interval bounds are not numeric', function test() {
-		var values = [
-				true,
-				[],
-				'5',
-				function(){},
-				null,
-				NaN,
-				{'foo':'bar'},
-				undefined
-			];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			assert.ok( !validate( 1, values[i], 1 ) );
-			assert.ok( !validate( 1, 0, values[i] ) );
-		}
-	});
-
 });
