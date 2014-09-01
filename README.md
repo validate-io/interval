@@ -39,7 +39,7 @@ isInterval( value, lower, upper );
 
 ## Notes
 
-All arguments are typed checked to ensure each is of type `number`. If any arguments are not of type `number`, the method returns false.
+All arguments are typed checked to ensure each is of type `number`. If any arguments are not of type `number`, the method returns `false`.
 
 
 ## Examples
