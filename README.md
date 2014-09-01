@@ -1,4 +1,4 @@
-interval
+Interval
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -19,15 +19,30 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'validate.io-interval' );
+var isInterval = require( 'validate.io-interval' );
+
+console.log( isInterval( 3, 0, 6 ) );
+// Returns true
+
+console.log( isInterval( 3, 4, 10 ) );
+// Returns false
 ```
+
+where
+
+``` javascript
+isInterval( value, lower, upper );
+```
+
+`value` is the value to be validated; `lower` is the lower interval bound (inclusive); `upper` is the upper interval bound (inclusive);
+
+
+## Notes
+
+All arguments are typed checked to ensure each is of type `number`. If any arguments are not of type `number`, the method returns false.
 
 
 ## Examples
-
-``` javascript
-var lib = require( 'validate.io-interval' );
-```
 
 To run the example code from the top-level application directory,
 
