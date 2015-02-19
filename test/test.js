@@ -1,3 +1,5 @@
+/* global require, describe, it */
+'use strict';
 
 // MODULES //
 
@@ -17,7 +19,6 @@ var expect = chai.expect,
 // TESTS //
 
 describe( 'validate.io-interval', function tests() {
-	'use strict';
 
 	it( 'should export a function', function test() {
 		expect( validate ).to.be.a( 'function' );
@@ -29,20 +30,39 @@ describe( 'validate.io-interval', function tests() {
 
 	it( 'should negatively validate', function test() {
 		var values = [
-				-1,
-				2,
-				true,
-				[],
-				'5',
-				function(){},
-				null,
-				NaN,
-				{'foo':'bar'},
-				undefined
-			];
+			-1,
+			2,
+			true,
+			[],
+			'5',
+			function(){},
+			null,
+			NaN,
+			{'foo':'bar'},
+			undefined
+		];
 
 		for ( var i = 0; i < values.length; i++ ) {
 			assert.ok( !validate( values[i], 0, 1 ) );
+		}
+	});
+
+	it( 'should negatively validate if not provided numeric values', function test() {
+		var values = [
+			true,
+			[],
+			'5',
+			function(){},
+			null,
+			NaN,
+			{'foo':'bar'},
+			undefined
+		];
+
+		for ( var i = 0; i < values.length; i++ ) {
+			assert.ok( !validate( values[i], 0, 1 ) );
+			assert.ok( !validate( 0, values[i], 1 ) );
+			assert.ok( !validate( 0, 1, values[i] ) );
 		}
 	});
 

@@ -1,7 +1,12 @@
-var isInterval = require( './../lib' );
+'use strict';
 
-console.log( isInterval( 3, 0, 6 ) );
-// Returns true
+var onInterval = require( './../lib' );
 
-console.log( isInterval( 3, 4, 10 ) );
-// Returns false
+console.log( onInterval( 3, 0, 6 ) );
+// returns true
+
+console.log( onInterval( 3, 4, 10 ) );
+// returns false
+
+console.log( onInterval( 11, 4, 10 ) );
+// returns false

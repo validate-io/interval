@@ -16,33 +16,37 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
-
 ``` javascript
-var isInterval = require( 'validate.io-interval' );
-
-console.log( isInterval( 3, 0, 6 ) );
-// Returns true
-
-console.log( isInterval( 3, 4, 10 ) );
-// Returns false
+var onInterval = require( 'validate.io-interval' );
 ```
 
-where
+#### onInterval( value, lower, upper )
+
+Validates if a `value` exists on a specified interval `[lower, upper]`, where `lower` is the lower interval bound (inclusive) and `upper` is the upper interval bound (inclusive).
+
 
 ``` javascript
-isInterval( value, lower, upper );
+var value = 5,
+	lower = 0,
+	upper = 10;
+
+var bool = onInterval( value, lower, upper );
+// returns true
 ```
 
-`value` is the value to be validated; `lower` is the lower interval bound (inclusive); `upper` is the upper interval bound (inclusive);
 
-
-## Notes
-
-`value` must be of type `number`. For any other type, the method returns `false`.
+__Note__: all `arguments` must be `numeric`. If provided non-numeric arguments, the method returns `false`.
 
 
 ## Examples
+
+``` javascript
+console.log( onInterval( 3, 0, 6 ) );
+// returns true
+
+console.log( onInterval( 3, 4, 10 ) );
+// returns false
+```
 
 To run the example code from the top-level application directory,
 
@@ -55,7 +59,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -75,16 +79,16 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2014. Athan Reines.
