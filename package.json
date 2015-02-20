@@ -28,7 +28,11 @@
     "validation",
     "validator",
     "valid",
-    "interval"
+    "interval",
+    "within",
+    "is",
+    "type",
+    "check"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/interval/issues"
